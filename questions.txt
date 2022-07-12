@@ -1,0 +1,57 @@
+1. Which of the following statements regarding the ephemerality of containers is FALSE?
+Containerized applications tend to be easier to scale.
+Containers starts ridiculously fast.
+Containers can be packaged and instantiated directly from developer IDEs.
+All are wrong
+
+2. Which on is not a docker restart policy ?
+no
+on-failure
+restart
+unless-stopped
+
+3. Which command allows you to access the live output of processes running inside a container?
+docker exec
+docker inspect
+docker run
+docker attach
+
+4. Which of the following correctly describes a Docker container?
+	A text file describing the dependencies of an application.
+	An online registry of Docker images.
+	An instance of an application created from a Docker image.
+	A package consisting of an application and all its dependencies.
+	
+5. What is the atomic unit of scheduling in Docker.
+the image
+the pod
+the job
+the container
+
+6. How to find container metadata location using Docker commands?
+docker build or docker image build 
+docker inspect or docker container inspect
+docker version 
+docker info
+
+7. What's the good analogy for docker exec?
+Allows you to run additional processes outside a container.
+Allows you to run additional processes in a container.
+It's similar to installing software.
+Allows you to run additional processes in new containers.
+
+
+8. This command takes a snapshot of your current Docker container and puts it in a new image
+docker pull
+docker push
+docker commit
+docker tag
+
+9. What syntax can be used to run a docker container from the docker image?
+docker create -t <image_name>:<tag_name> .
+docker build -t <image_name>:<tag_name> .
+docker run -t <image_name>:<tag_name> .
+docker convert -t <image_name>:<tag_name> .
+
+
+
