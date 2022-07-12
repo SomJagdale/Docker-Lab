@@ -1,0 +1,56 @@
+Questions
+1. Who has created Docker in 2013?
+	1. Walter Dandy
+	2. Solomon Hykes
+	3. Wilbur Davenport
+	4. Clarence Madison Dally
+	
+2 What is Docker?
+	A. an open-source lightweight containerisation technology
+	B. an operating system
+	C. language
+	D. None of the above
+
+3. A Docker registry is a place to store and distribute Docker ....
+	 a. Codes
+	 b. Images
+	 c. Libraries
+	 d. All of the above
+ 
+4. Is docker image OS dependent?
+	 a. Yes
+	 b. No
+
+5. From below what is not true about the parent image 
+	 a. OS without Kernel 
+	 b. OS with Kernel 
+	 c. Is it first line in the Dockerfile
+	 d. It has to be declared with 'FROM'
+	
+6. What port does Docker registry use?
+	 a. Port 3000
+	 b. Port 5000
+	 c. Port 8000
+	 d. None of the above
+ 
+7. Can we create multiple container from the same image?
+	 a. yes
+	 b. no
+   
+8. Which of the following is a text document that contains all the commands a user could call on the command line to assemble an image?
+	a. Docker Cloud
+	b. Dockerfile
+	c. Docker Kitematic
+	d. Docker Compose
+	
+9 ___ is computer software, firmware or hardware that creates and runs virtual machines.
+	A. hypervisor
+	B. Version control
+	C. Virtualization
+	D. hub
+	
+10. Which is not a docker command?
+	docker container inspect _container_name 
+	docker contaienr run _image_name
+	docker image run _image_name
+	All correct

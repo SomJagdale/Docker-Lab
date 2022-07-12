@@ -1,0 +1,19 @@
+import java.util.Date; 
+public class hello
+{
+	public static void main(String[] args) 
+	{
+	  try
+      {
+        while(true)
+        {
+		    System.out.println("Hello Mobileum");
+		    Thread.sleep(1000);
+		}
+      }
+      catch(InterruptedException ex)
+      {
+          ex.printStackTrace();
+      }
+	}
+}

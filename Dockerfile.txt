@@ -1,0 +1,34 @@
+FROM mcalizo/rhel7.2systemd:latest
+
+LABEL email=somanath.jagadale@mobileum.com
+
+RUN mkdir /roamware
+WORKDIR /roamware
+
+RUN mkdir bin
+RUN mkdir lib
+RUN mkdir log
+RUN mkdir scripts
+RUN mkdir cfg
+
+RUN mkdir log/template
+RUN mkdir log/offline
+RUN mkdir log/workarea
+RUN mkdir log/cachedump
+RUN mkdir log/profiledump
+RUN mkdir -p log/inputtrace/offline
+RUN mkdir -p log/srdctrace/offline
+RUN mkdir -p log/srdccounts/offline
+RUN mkdir -p log/otarequest/offline
+RUN mkdir -p log/kpistats/offline
+
+COPY bin/networktr bin/
+COPY cfg/* cfg/
+COPY lib/* lib/
+COPY scripts/* scripts/
+
+RUN chmod +x bin/networktr
+
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/roamware/lib
+
+ENTRYPOINT ./bin/networktr -c cfg/MyTR.cfg
