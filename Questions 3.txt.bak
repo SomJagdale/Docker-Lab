@@ -1,0 +1,38 @@
+1. Which one is not docker restart policty
+no
+restart
+always
+unless-stopped
+
+2. Which one is default network driver in the docker 
+bridge
+host 
+overlay 
+macvlan
+
+3. Command to list down networks in docker 
+docker network ls
+docker bridge ls
+docker vlan ls
+docker host ps
+
+4 Which driver we can configure for Container when we dont want to communicate outside world?
+brdge
+host 
+overlay
+macvlan
+
+5. Choose the correct sequence to map the container port to the host port
+-p container_port:host_port
+-p host_port:container_port
+
+
+6. Which command create brdge network in docker ?
+docker create network network_name
+docker create brdge network_name
+
+7. To create subnet inside docker we need set
+Host IP and Gatway
+subnet ID and Gateway IP
+subnet port and Gateway port 
+

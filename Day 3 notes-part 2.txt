@@ -1,0 +1,55 @@
+Q1.attach
+Q2.docker run vs docker container run
+Q3.dockerfile has no replacement
+Q3. for dockerfile repo
+
+Now we are creating two container which will be by default part of the bridge network which default network driver
+here we are using alpine container for easy demonstration
+
+docker container run -itd --name alpinec1 alpine
+docker container run -itd --name alpinec2 alpine
+
+docker network ls
+docker inspect bridge | less
+docker container inspect alpinec1
+
+docker container inspect --format={{}}
+
+now we access the container and ping each other
+now we are trying to ping by name of the container
+
+here we cant
+so we are creating user defined bridge network
+
+to creat that we run below command 
+
+docker network create --driver bridge ntr-net1
+docker network inspect ntr-net1
+
+docker run -itd --name alpinec1 --network ntr-net1
+docker run -itd --name alpinec1 --network ntr-net1
+
+now we can check that we can ping each other by using it's name also 
+
+now we will show you how none work
+ 
+Now we will show how host 
+
+overlay works (docker swarn)
+
+Creating Subnet 
+
+docker network create ntr-net2 --subnet 192.168.100.0/24 --gatway 192.168.100.1
+
+assign static IP address to the container
+docker container run -itd --name alpinec3 --ip 192.168.100.20 alpine
+
+port forwarding
+
+docker container run -itd --name nginxc1 --port 1234:80 nginx
+access the container and show them contain port 
+by netstat -tunulp
+show them host port of running host machin also
+and type below in browser and check
+
+https://10.10.19.178:1234

@@ -1,0 +1,76 @@
+
+4 NETWORKING DRIVERS
+
+BRIDGE
+NO
+HOST
+OVERLAY
+
+CREATING USER DEFINED SUBNETS
+ docker network create ntr-net3 --subnet 192.168.100.0/24 --gateway 192.168.100.1
+ 
+
+STATIC IP ADDRESS
+docker run -d --name ntrpg1cont3  --ip 192.168.100.20 --network ntr-net3 ntr:pg1
+
+PORT FORWORDING
+docker run -d --name somwebc1  -p  1234:80  nginx
+
+docker run -d --name ntrpg1cont1  -p 16246:16245 ntr:pg1
+
+docker run -d --name somwebc2  -p 16246:16245 --ip 192.168.100.20 --network ntr-net nginx
+
+CREATING TWO CONTAINERS
+Starting two alpine container
+docker run -dit --name alpine1 alpine ash
+docker run -dit --name alpine2 alpine ash
+
+INSPECTING ITS IP AND ITS GATWAY IP ADDRESS
+ docker network inspect bridge
+ docker exec 
+ ping -c 2 google.com
+ ping -c 2 172.17.0.3
+ ping -c 2 alpine2
+
+ docker container stop alpine1 alpine2
+ docker container rm alpine1 alpine2
+
+WE CANT PING TO ANOTHER CONTAINER BY CONTAINER NAME IN DEFAULT BRIDGE NETWORK
+SO WE ARE CREATING USER DEFINED BRIDGE NETWORK
+
+ 
+ creatE user defined bridge network
+ docker network create --driver bridge alpine-net
+ docker network ls
+ docker network inspect alpine-net
+
+CREATING 2 CONTAINERS ON NEW BRIGE AND ONE ON DEFAULT BRIDGE  
+ docker run -dit --name alpine1 --network alpine-net alpine ash
+ docker run -dit --name alpine2 --network alpine-net alpine ash
+ docker run -dit --name alpine3 alpine ash
+ docker run -dit --name alpine4 --network alpine-net alpine ash
+ docker network connect bridge alpine4
+
+docker network inspect alpine-net 
+docker container attach alpine1
+
+docker  inspect  somc1 --format='{{.NetworkSettings.IPAddress}}'
+
+
+
+Networking using the host network##############
+
+Port forwarding
+
+
+
+static ip to container
+
+
+
+
+
+
+
+docker  run -dit --name ashuc5  --network ashubr2  alpine
+docker  run -dit --name ashuc6 --ip 192.168.100.20  --network ashubr2  alpine
