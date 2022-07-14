@@ -1,0 +1,25 @@
+1. Which one is not docker restart policty
+no
+restart
+always
+unless-stopped
+
+2. What is exclusive benefit of container over VM?
+Container is very thin. 
+Container can communicate with outside world
+Container can run application in isolation
+Container can have host machin address 
+
+3. What is exclusive benefit of VM over Container?
+VM can communicate with outside world
+VM can run application in isolation
+VM can have host machin address 
+VM can persist data after stopping or killing
+
+4. How to check container stats in term of cpu or memory usage?
+docker top
+docker ps
+docker netstat
+docker netcat
+
+

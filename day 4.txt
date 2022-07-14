@@ -1,0 +1,22 @@
+
+docker  run -d  --name ntrdb1 -e MYSQL_ROOT_PASSWORD="123456#" mysql
+docker exec -it ntrdb1 sh
+mysql -u root -p 
+show databases;
+create database ntr;
+show databases;
+show /var/lib/mysql
+kill the container are start again and show them that database is not present
+
+ocker volume  create  ntrdb-vol1 
+docker run -itd --name ntrsqlc1 --env MYSQL_ROOT_PASSWORD="123456#" --volume ntrdb-vol1:/var/lib/mysql mysql
+"/var/lib/docker/volumes/ashudb-vol1/_data"
+create database 
+kill it 
+create new one again
+
+
+mounting ntr.log and roamertrace.log file
+docker run -it --name volcont2 --volume ntrdb-vol1:/mnt/db alpine
+
+
