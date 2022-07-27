@@ -1,0 +1,39 @@
+
+1. Go to folder /etc/docker/
+    cd /etc/docker/
+
+2. create a new file named daemon.json with root access:
+    sudo vi daemon.json
+
+3. Add below entry in daemon.json :
+    {
+      "insecure-registries" : [ "http://172.16.129.152:8085" ]
+    }
+
+4. Restart the docker service :
+    sudo service docker restart
+
+Note: Check the docker restart time/status by below command
+    sudo service docker status
+
+5. Login to the mobileum nexus registry :
+    docker login -u admin -p Roamware123 172.16.129.152:8085
+
+6. Now you can pull the images with docker pull command:
+    dokcer pull 172.16.129.152:8085/mobileum/<<image-name:tag>>
+    e.g: dokcer pull 172.16.129.152:8085/mobileum/imas-ubi8-rel:R220503
+
+== Creat tag
+docker tag soraf-ubi8-rel:head 172.16.129.152:8085/mobileum/soraf-ubi8-rel:head
+
+== loging to nexus private registry
+docker login
+
+== pushing image to registry
+docker push 172.16.129.152:8085/mobileum/soraf-ubi8-rel:head
+
+== pulling image to registry
+docker pull 172.16.129.152:8085/mobileum/soraf-ubi8-rel:head
+
+== running pulled image from the private registry
+docker run -itd --name sorafc10 -p 18443:8443 172.16.129.152:8085/mobileum/soraf-ubi8-rel:head
