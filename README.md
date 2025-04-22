@@ -1,6 +1,7 @@
 
 # Docker-Lab
 Docker Training Day 1
+![image](https://github.com/user-attachments/assets/64ce9573-af44-4154-a6e4-5629cb745ba5)
 
 ////////////////////////////////////////////////////////////////////////////////////////
 1. VirtualBox/VMware/hyper-v Instllation - Ask IT team to install it on your laptop
